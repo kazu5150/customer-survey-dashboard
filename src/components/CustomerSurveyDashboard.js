@@ -115,6 +115,8 @@ const CustomerSurveyDashboard = () => {
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
       <h1 style={{ fontSize: '24px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
       
+      <div style={{ marginBottom: '40px' }}></div>
+
       <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
         <div>
           <label htmlFor="pattern-select" style={{ marginRight: '10px' }}>パターン選択：</label>
