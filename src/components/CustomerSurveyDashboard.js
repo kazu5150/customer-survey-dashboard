@@ -113,7 +113,7 @@ const CustomerSurveyDashboard = () => {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '24px', textAlign: 'center', marginBottom: '20px' }}>顧客満足度調査ダッシュボード</h1>
+      <h1 style={{ fontSize: '24px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
       
       <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
         <div>
@@ -192,7 +192,9 @@ const CustomerSurveyDashboard = () => {
         )}
       </div>
       <div style={{ marginTop: '20px' }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>顧客満足度調査レポート</h2>
+        <h1 style={{ fontSize: '20px', marginBottom: '10px' }}>顧客満足度調査レポート</h1>
+
+
         <h2>1. 調査概要</h2>
         <p>当社では、お客様のご意見を大切にし、サービス品質の向上に努めております。この度、実施した顧客満足度調査の結果をご報告いたします。</p>
         <ul>
@@ -200,6 +202,7 @@ const CustomerSurveyDashboard = () => {
           <li>調査方法: 電話によるアンケート</li>
           <li>回答者数: 22名（有効回答数: 15名）</li>
         </ul>
+
         <h2>2. 主な調査結果</h2>
         <h3>2.1 お客様の声とセンチメント分析</h3>
         <p>お客様からいただいたコメントについて、センチメント分析を行いました。その結果、全体的に肯定的な評価が多数を占めていることが分かりました。</p>
