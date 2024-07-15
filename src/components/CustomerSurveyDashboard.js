@@ -193,7 +193,7 @@ const CustomerSurveyDashboard = () => {
       </div>
       <div style={{ marginTop: '20px' }}>
         <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>顧客満足度調査レポート</h2>
-        <h3>1. 調査概要</h3>
+        <h2>1. 調査概要</h2>
         <p>当社では、お客様のご意見を大切にし、サービス品質の向上に努めております。この度、実施した顧客満足度調査の結果をご報告いたします。</p>
         <ul>
           <li>調査期間: [具体的な期間を記入]</li>
