@@ -155,7 +155,7 @@ const CustomerSurveyDashboard = () => {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '24px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
+      <h1 style={{ fontSize: '30px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
       
       <div style={{ marginBottom: '80px' }}></div>
 
@@ -241,7 +241,7 @@ const CustomerSurveyDashboard = () => {
       <div style={{ marginBottom: '80px' }}></div>
 
       <div style={{ marginTop: '20px' }}>
-        <h1 style={{ fontSize: '30px', marginBottom: '10px' }}>顧客満足度調査レポート</h1>
+        <h1 style={{ fontSize: '25px', marginBottom: '10px' }}>顧客満足度調査レポート</h1>
 
 
         <h2>1. 調査概要</h2>
