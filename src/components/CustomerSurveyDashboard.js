@@ -141,6 +141,18 @@ const CustomerSurveyDashboard = () => {
     return prepareChartData(aggregated);
   }, [activeQuestion, selectedPattern, selectedOffice]);
 
+  const getQuestionTitle = (questionKey) => {
+    const titles = {
+      Q1: 'ご利用のきっかけ',
+      Q2: '説明の分かりやすさ',
+      Q3: '対応の丁寧さ',
+      Q4: '満足度',
+      Q5: '施行後の効果や後片付け',
+      Q6: '今回の契約の総合評価'
+    };
+    return `${questionKey}：${titles[questionKey]}`;
+  };
+
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
       <h1 style={{ fontSize: '24px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
@@ -213,7 +225,7 @@ const CustomerSurveyDashboard = () => {
 
       <div style={{ marginTop: '20px' }}>
         <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>分析サマリー</h2>
-        <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{activeQuestion}</h2>
+        <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{getQuestionTitle(activeQuestion)}</h2>
         {chartData.length > 0 ? (
           <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
             {chartData.map(item => (
