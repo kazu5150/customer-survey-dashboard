@@ -224,7 +224,6 @@ const CustomerSurveyDashboard = () => {
       )}
 
       <div style={{ marginTop: '20px' }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>分析サマリー</h2>
         <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{getQuestionTitle(activeQuestion)}</h2>
         {chartData.length > 0 ? (
           <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
@@ -242,7 +241,7 @@ const CustomerSurveyDashboard = () => {
       <div style={{ marginBottom: '80px' }}></div>
 
       <div style={{ marginTop: '20px' }}>
-        <h1 style={{ fontSize: '20px', marginBottom: '10px' }}>顧客満足度調査レポート</h1>
+        <h1 style={{ fontSize: '30px', marginBottom: '10px' }}>顧客満足度調査レポート</h1>
 
 
         <h2>1. 調査概要</h2>
