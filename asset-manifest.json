@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/customer-survey-dashboard/static/js/main.1f3d55c9.js",
+    "main.js": "/customer-survey-dashboard/static/js/main.fe61416c.js",
     "index.html": "/customer-survey-dashboard/index.html",
-    "main.1f3d55c9.js.map": "/customer-survey-dashboard/static/js/main.1f3d55c9.js.map"
+    "main.fe61416c.js.map": "/customer-survey-dashboard/static/js/main.fe61416c.js.map"
   },
   "entrypoints": [
-    "static/js/main.1f3d55c9.js"
+    "static/js/main.fe61416c.js"
   ]
 }
