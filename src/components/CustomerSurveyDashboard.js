@@ -189,7 +189,7 @@ const CustomerSurveyDashboard = () => {
             <option value="Q3">Q3: 対応の丁寧さ</option>
             <option value="Q4">Q4: 満足度</option>
             <option value="Q5">Q5: 施行後の効果や後片付け</option>
-            <option value="Q6">Q5: 今回の契約の総合評価</option>
+            <option value="Q6">Q6: 今回の契約の総合評価</option>
           </select>
         </div>
       </div>
