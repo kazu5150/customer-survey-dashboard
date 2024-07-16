@@ -213,6 +213,7 @@ const CustomerSurveyDashboard = () => {
 
       <div style={{ marginTop: '20px' }}>
         <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>分析サマリー</h2>
+        <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{activeQuestion}</h2>
         {chartData.length > 0 ? (
           <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
             {chartData.map(item => (
