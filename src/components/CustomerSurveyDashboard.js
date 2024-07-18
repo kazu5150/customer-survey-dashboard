@@ -158,7 +158,7 @@ const CustomerSurveyDashboard = () => {
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '55px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
+      <h1 style={{ fontSize: '40px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
 
       <div style={{ marginTop: '80px' }}>
 
