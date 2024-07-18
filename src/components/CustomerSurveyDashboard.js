@@ -172,6 +172,8 @@ const CustomerSurveyDashboard = () => {
           <li>回答者数: 22名（有効回答数: 15名）</li>
         </ul>
 
+        <div style={{ marginBottom: '80px' }}></div>
+
         <h2>2. 主な調査結果</h2>
         <h3>2.1 サービス認知経路</h3>
         <p>お客様が当社のサービスを知るきっかけとして、以下が主な経路となっています：</p>
@@ -186,6 +188,8 @@ const CustomerSurveyDashboard = () => {
           <li>その他 (タウンページ、休眠物件など): 4件 (26.7%)</li>
         </ul>
         <p>特に、多くのお客様が「紹介」によって当社サービスをお知りいただいており、ご信頼いただいていることを大変光栄に思います。</p>
+
+        <div style={{ marginBottom: '80px' }}></div>
 
         <h3>2.2 サービス品質評価</h3>
         <ol>
@@ -213,6 +217,8 @@ const CustomerSurveyDashboard = () => {
             </ul>
           </li>
         </ol>
+
+        <div style={{ marginBottom: '80px' }}></div>
 
         <h3>2.3 お客様の声とセンチメント分析</h3>
         <p>お客様からいただいたコメントについて、センチメント分析を行いました。その結果、全体的に肯定的な評価が多数を占めていることが分かりました。</p>
@@ -322,7 +328,8 @@ const CustomerSurveyDashboard = () => {
       <div style={{ marginBottom: '80px' }}></div>
 
       <div style={{ marginTop: '20px' }}>
-        <h1 style={{ fontSize: '25px', marginBottom: '10px' }}>顧客満足度調査レポート</h1>
+
+      <div style={{ marginBottom: '80px' }}></div>
 
 
 
@@ -345,6 +352,8 @@ const CustomerSurveyDashboard = () => {
             </ul>
           </li>
         </ol>
+
+        <div style={{ marginBottom: '80px' }}></div>
 
         <h2>4. おわりに</h2>
         <p>お客様の声は、私たちのサービス向上の原動力です。今回の調査で、86.7%のお客様に「満足」または「大変満足」とのご評価をいただき、大変光栄に存じます。一方で、改善すべき点も明確になりました。これらの課題に真摯に取り組み、今後も皆様のご期待に添えるよう、社員一同、より一層のサービス品質向上に努めてまいります。</p>
