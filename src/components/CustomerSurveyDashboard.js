@@ -166,84 +166,93 @@ const CustomerSurveyDashboard = () => {
 
       <h1>アンケート結果ダッシュボード</h1>
 
-      <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
-        <div>
-          <label htmlFor="pattern-select" style={{ marginRight: '10px' }}>パターン選択：</label>
-          <select
-            id="pattern-select"
-            value={selectedPattern}
-            onChange={(e) => setSelectedPattern(e.target.value)}
-            style={{ padding: '5px' }}
-          >
-            <option value="全体">全体</option>
-            <option value="TC">TCパターン</option>
-            <option value="PC">PCパターン</option>
-          </select>
-        </div>
-        
-        <div>
-          <label htmlFor="office-select" style={{ marginRight: '10px' }}>営業所選択：</label>
-          <select
-            id="office-select"
-            value={selectedOffice}
-            onChange={(e) => setSelectedOffice(e.target.value)}
-            style={{ padding: '5px' }}
-          >
-            {offices.map(office => (
-              <option key={office} value={office}>{office}</option>
-            ))}
-          </select>
-        </div>
-        
-        <div>
-          <label htmlFor="question-select" style={{ marginRight: '10px' }}>質問選択：</label>
-          <select
-            id="question-select"
-            value={activeQuestion}
-            onChange={(e) => setActiveQuestion(e.target.value)}
-            style={{ padding: '5px' }}
-          >
-            <option value="Q1">Q1: ご利用のきっかけ</option>
-            <option value="Q2">Q2: 説明の分かりやすさ</option>
-            <option value="Q3">Q3: 対応の丁寧さ</option>
-            <option value="Q4">Q4: 満足度</option>
-            <option value="Q5">Q5: 施行後の効果や後片付け</option>
-            <option value="Q6">Q6: 今回の契約の総合評価</option>
-          </select>
-        </div>
-      </div>
+      <div style={{ marginBottom: '40px' }}></div>
 
-      {chartData.length > 0 ? (
-        <div style={{ width: '100%', height: '400px' }}>
-          <ResponsiveContainer>
-            <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" />
-              <YAxis dataKey="name" type="category" width={150} />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="value" fill="#8884d8" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      ) : (
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>データがありません</div>
-      )}
+      <div style={{ backgroundColor: '#f0f0f0', padding: '20px', borderRadius: '10px', marginBottom: '40px' }}>
 
-      <div style={{ marginTop: '20px' }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{getQuestionTitle(activeQuestion)}</h2>
+        <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
+          <div>
+            <label htmlFor="pattern-select" style={{ marginRight: '10px' }}>パターン選択：</label>
+            <select
+              id="pattern-select"
+              value={selectedPattern}
+              onChange={(e) => setSelectedPattern(e.target.value)}
+              style={{ padding: '5px' }}
+            >
+              <option value="全体">全体</option>
+              <option value="TC">TCパターン</option>
+              <option value="PC">PCパターン</option>
+            </select>
+          </div>
+          
+          <div>
+            <label htmlFor="office-select" style={{ marginRight: '10px' }}>営業所選択：</label>
+            <select
+              id="office-select"
+              value={selectedOffice}
+              onChange={(e) => setSelectedOffice(e.target.value)}
+              style={{ padding: '5px' }}
+            >
+              {offices.map(office => (
+                <option key={office} value={office}>{office}</option>
+              ))}
+            </select>
+          </div>
+          
+          <div>
+            <label htmlFor="question-select" style={{ marginRight: '10px' }}>質問選択：</label>
+            <select
+              id="question-select"
+              value={activeQuestion}
+              onChange={(e) => setActiveQuestion(e.target.value)}
+              style={{ padding: '5px' }}
+            >
+              <option value="Q1">Q1: ご利用のきっかけ</option>
+              <option value="Q2">Q2: 説明の分かりやすさ</option>
+              <option value="Q3">Q3: 対応の丁寧さ</option>
+              <option value="Q4">Q4: 満足度</option>
+              <option value="Q5">Q5: 施行後の効果や後片付け</option>
+              <option value="Q6">Q6: 今回の契約の総合評価</option>
+            </select>
+          </div>
+        </div>
+
         {chartData.length > 0 ? (
-          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
-            {chartData.map(item => (
-              <li key={item.name}>
-                {item.name}: {item.value} 件 ({((item.value / chartData.reduce((sum, d) => sum + d.value, 0)) * 100).toFixed(1)}%)
-              </li>
-            ))}
-          </ul>
+          <div style={{ width: '100%', height: '400px' }}>
+            <ResponsiveContainer>
+              <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" />
+                <YAxis dataKey="name" type="category" width={150} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="value" fill="#8884d8" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         ) : (
-          <p>データが不足しているため、分析サマリーを表示できません。</p>
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>データがありません</div>
         )}
+
+        <div style={{ marginTop: '20px' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{getQuestionTitle(activeQuestion)}</h2>
+          {chartData.length > 0 ? (
+            <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+              {chartData.map(item => (
+                <li key={item.name}>
+                  {item.name}: {item.value} 件 ({((item.value / chartData.reduce((sum, d) => sum + d.value, 0)) * 100).toFixed(1)}%)
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>データが不足しているため、分析サマリーを表示できません。</p>
+          )}
+        </div>
+
+
       </div>
+
+
 
       <div style={{ marginBottom: '80px' }}></div>
 
