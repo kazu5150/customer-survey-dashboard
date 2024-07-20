@@ -153,98 +153,114 @@ const CustomerSurveyDashboard = () => {
     return `${questionKey}：${titles[questionKey]}`;
   };
 
+
+
+
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ fontSize: '30px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
-      
+      <h1 style={{ fontSize: '40px', textAlign: 'center', marginBottom: '20px' }}>三共消毒様 2024年6月 顧客満足度調査</h1>
+
+      <div style={{ marginTop: '80px' }}>
+
       <div style={{ marginBottom: '80px' }}></div>
 
-      <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
-        <div>
-          <label htmlFor="pattern-select" style={{ marginRight: '10px' }}>パターン選択：</label>
-          <select
-            id="pattern-select"
-            value={selectedPattern}
-            onChange={(e) => setSelectedPattern(e.target.value)}
-            style={{ padding: '5px' }}
-          >
-            <option value="全体">全体</option>
-            <option value="TC">TCパターン</option>
-            <option value="PC">PCパターン</option>
-          </select>
-        </div>
-        
-        <div>
-          <label htmlFor="office-select" style={{ marginRight: '10px' }}>営業所選択：</label>
-          <select
-            id="office-select"
-            value={selectedOffice}
-            onChange={(e) => setSelectedOffice(e.target.value)}
-            style={{ padding: '5px' }}
-          >
-            {offices.map(office => (
-              <option key={office} value={office}>{office}</option>
-            ))}
-          </select>
-        </div>
-        
-        <div>
-          <label htmlFor="question-select" style={{ marginRight: '10px' }}>質問選択：</label>
-          <select
-            id="question-select"
-            value={activeQuestion}
-            onChange={(e) => setActiveQuestion(e.target.value)}
-            style={{ padding: '5px' }}
-          >
-            <option value="Q1">Q1: ご利用のきっかけ</option>
-            <option value="Q2">Q2: 説明の分かりやすさ</option>
-            <option value="Q3">Q3: 対応の丁寧さ</option>
-            <option value="Q4">Q4: 満足度</option>
-            <option value="Q5">Q5: 施行後の効果や後片付け</option>
-            <option value="Q6">Q6: 今回の契約の総合評価</option>
-          </select>
-        </div>
-      </div>
+      <h1>アンケート結果ダッシュボード</h1>
 
-      {chartData.length > 0 ? (
-        <div style={{ width: '100%', height: '400px' }}>
-          <ResponsiveContainer>
-            <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" />
-              <YAxis dataKey="name" type="category" width={150} />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="value" fill="#8884d8" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      ) : (
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>データがありません</div>
-      )}
+      <div style={{ marginBottom: '40px' }}></div>
 
-      <div style={{ marginTop: '20px' }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{getQuestionTitle(activeQuestion)}</h2>
+      <div style={{ backgroundColor: '#f0f0f0', padding: '20px', borderRadius: '10px', marginBottom: '40px' }}>
+
+        <div style={{ marginBottom: '20px', display: 'flex', justifyContent: 'space-between' }}>
+          <div>
+            <label htmlFor="pattern-select" style={{ marginRight: '10px' }}>パターン選択：</label>
+            <select
+              id="pattern-select"
+              value={selectedPattern}
+              onChange={(e) => setSelectedPattern(e.target.value)}
+              style={{ padding: '5px' }}
+            >
+              <option value="全体">全体</option>
+              <option value="TC">TCパターン</option>
+              <option value="PC">PCパターン</option>
+            </select>
+          </div>
+          
+          <div>
+            <label htmlFor="office-select" style={{ marginRight: '10px' }}>営業所選択：</label>
+            <select
+              id="office-select"
+              value={selectedOffice}
+              onChange={(e) => setSelectedOffice(e.target.value)}
+              style={{ padding: '5px' }}
+            >
+              {offices.map(office => (
+                <option key={office} value={office}>{office}</option>
+              ))}
+            </select>
+          </div>
+          
+          <div>
+            <label htmlFor="question-select" style={{ marginRight: '10px' }}>質問選択：</label>
+            <select
+              id="question-select"
+              value={activeQuestion}
+              onChange={(e) => setActiveQuestion(e.target.value)}
+              style={{ padding: '5px' }}
+            >
+              <option value="Q1">Q1: ご利用のきっかけ</option>
+              <option value="Q2">Q2: 説明の分かりやすさ</option>
+              <option value="Q3">Q3: 対応の丁寧さ</option>
+              <option value="Q4">Q4: 満足度</option>
+              <option value="Q5">Q5: 施行後の効果や後片付け</option>
+              <option value="Q6">Q6: 今回の契約の総合評価</option>
+            </select>
+          </div>
+        </div>
+
         {chartData.length > 0 ? (
-          <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
-            {chartData.map(item => (
-              <li key={item.name}>
-                {item.name}: {item.value} 件 ({((item.value / chartData.reduce((sum, d) => sum + d.value, 0)) * 100).toFixed(1)}%)
-              </li>
-            ))}
-          </ul>
+          <div style={{ width: '100%', height: '400px' }}>
+            <ResponsiveContainer>
+              <BarChart data={chartData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis type="number" />
+                <YAxis dataKey="name" type="category" width={150} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="value" fill="#8884d8" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         ) : (
-          <p>データが不足しているため、分析サマリーを表示できません。</p>
+          <div style={{ textAlign: 'center', marginTop: '20px' }}>データがありません</div>
         )}
+
+        <div style={{ marginTop: '20px' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '10px' }}>{getQuestionTitle(activeQuestion)}</h2>
+          {chartData.length > 0 ? (
+            <ul style={{ paddingLeft: '20px', lineHeight: '1.6' }}>
+              {chartData.map(item => (
+                <li key={item.name}>
+                  {item.name}: {item.value} 件 ({((item.value / chartData.reduce((sum, d) => sum + d.value, 0)) * 100).toFixed(1)}%)
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>データが不足しているため、分析サマリーを表示できません。</p>
+          )}
+        </div>
+
+
       </div>
+
+
 
       <div style={{ marginBottom: '80px' }}></div>
 
       <div style={{ marginTop: '20px' }}>
-        <h1 style={{ fontSize: '25px', marginBottom: '10px' }}>顧客満足度調査レポート</h1>
 
 
-        <h2>1. 調査概要</h2>
+
+        <h1>1. 調査概要</h1>
         <p>当社では、お客様のご意見を大切にし、サービス品質の向上に努めております。この度、実施した顧客満足度調査の結果をご報告いたします。</p>
         <ul>
           <li>調査期間: [具体的な期間を記入]</li>
@@ -252,28 +268,10 @@ const CustomerSurveyDashboard = () => {
           <li>回答者数: 22名（有効回答数: 15名）</li>
         </ul>
 
-        <h2>2. 主な調査結果</h2>
-        <h3>2.1 お客様の声とセンチメント分析</h3>
-        <p>お客様からいただいたコメントについて、センチメント分析を行いました。その結果、全体的に肯定的な評価が多数を占めていることが分かりました。</p>
+        <div style={{ marginBottom: '80px' }}></div>
 
-        <h4>ポジティブなコメント（13件、86.7%）:</h4>
-        <ul>
-          <li>「凄くきちんとしていて良くやって頂きました。大変満足しています。」</li>
-          <li>「良くやっていただきました。問題はありません。」</li>
-          <li>「満足しています。特に問題はありません。」</li>
-        </ul>
-
-        <h4>中立的なコメント（1件、6.7%）:</h4>
-        <ul>
-          <li>「今のところ問題ありません」</li>
-        </ul>
-
-        <h4>改善を要するコメント（1件、6.7%）:</h4>
-        <ul>
-          <li>「長くやっていただきましたが、まだネズミが出る。どうにかしてほしい。」</li>
-        </ul>
-
-        <h3>2.2 サービス認知経路</h3>
+        <h1>2. 主な調査結果</h1>
+        <h2>2.1 サービス認知経路</h2>
         <p>お客様が当社のサービスを知るきっかけとして、以下が主な経路となっています：</p>
         <ul>
           <li>ご紹介: 8件 (53.3%)
@@ -287,7 +285,9 @@ const CustomerSurveyDashboard = () => {
         </ul>
         <p>特に、多くのお客様が「紹介」によって当社サービスをお知りいただいており、ご信頼いただいていることを大変光栄に思います。</p>
 
-        <h3>2.3 サービス品質評価</h3>
+        <div style={{ marginBottom: '80px' }}></div>
+
+        <h2>2.2 サービス品質評価</h2>
         <ol>
           <li><strong>説明の詳しさ</strong>:
             <ul>
@@ -314,7 +314,36 @@ const CustomerSurveyDashboard = () => {
           </li>
         </ol>
 
-        <h2>3. 改善に向けて</h2>
+        <div style={{ marginBottom: '80px' }}></div>
+
+        <h2>2.3 お客様の声とセンチメント分析</h2>
+        <p>お客様からいただいたコメントについて、センチメント分析を行いました。その結果、全体的に肯定的な評価が多数を占めていることが分かりました。</p>
+
+        <h3>ポジティブなコメント（13件、86.7%）:</h3>
+        <ul>
+          <li>「凄くきちんとしていて良くやって頂きました。大変満足しています。」</li>
+          <li>「良くやっていただきました。問題はありません。」</li>
+          <li>「満足しています。特に問題はありません。」</li>
+        </ul>
+
+        <h3>中立的なコメント（1件、6.7%）:</h3>
+        <ul>
+          <li>「今のところ問題ありません」</li>
+        </ul>
+
+        <h3>改善を要するコメント（1件、6.7%）:</h3>
+        <ul>
+          <li>「長くやっていただきましたが、まだネズミが出る。どうにかしてほしい。」</li>
+        </ul>
+
+      </div>
+
+      
+      <div style={{ marginBottom: '80px' }}></div>
+
+
+
+        <h1>3. 改善に向けて</h1>
         <p>センチメント分析と個別のフィードバックを基に、以下の点について改善を進めてまいります：</p>
         <ol>
           <li>より確実な害虫・害獣対策の実施
@@ -334,7 +363,9 @@ const CustomerSurveyDashboard = () => {
           </li>
         </ol>
 
-        <h2>4. おわりに</h2>
+        <div style={{ marginBottom: '80px' }}></div>
+
+        <h1>4. おわりに</h1>
         <p>お客様の声は、私たちのサービス向上の原動力です。今回の調査で、86.7%のお客様に「満足」または「大変満足」とのご評価をいただき、大変光栄に存じます。一方で、改善すべき点も明確になりました。これらの課題に真摯に取り組み、今後も皆様のご期待に添えるよう、社員一同、より一層のサービス品質向上に努めてまいります。</p>
         <p>引き続き、ご愛顧のほどよろしくお願い申し上げます。</p>
         <p>[会社名] [担当部署]</p>
