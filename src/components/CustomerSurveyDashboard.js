@@ -144,9 +144,9 @@ const CustomerSurveyDashboard = () => {
   const getQuestionTitle = (questionKey) => {
     const titles = {
       Q1: 'ご利用のきっかけ',
-      Q2: '説明の分かりやすさ',
-      Q3: '対応の丁寧さ',
-      Q4: '満足度',
+      Q2: '契約前の説明や提案',
+      Q3: '作業後の説明',
+      Q4: '社員の態度や服装',
       Q5: '施行後の効果や後片付け',
       Q6: '今回の契約の総合評価'
     };
@@ -208,9 +208,9 @@ const CustomerSurveyDashboard = () => {
               style={{ padding: '5px' }}
             >
               <option value="Q1">Q1: ご利用のきっかけ</option>
-              <option value="Q2">Q2: 説明の分かりやすさ</option>
-              <option value="Q3">Q3: 対応の丁寧さ</option>
-              <option value="Q4">Q4: 満足度</option>
+              <option value="Q2">Q2: 契約前の説明や提案</option>
+              <option value="Q3">Q3: 作業後の状況説明</option>
+              <option value="Q4">Q4: 社員の服装や態度</option>
               <option value="Q5">Q5: 施行後の効果や後片付け</option>
               <option value="Q6">Q6: 今回の契約の総合評価</option>
             </select>
@@ -263,9 +263,23 @@ const CustomerSurveyDashboard = () => {
         <h1>1. 調査概要</h1>
         <p>当社では、お客様のご意見を大切にし、サービス品質の向上に努めております。この度、実施した顧客満足度調査の結果をご報告いたします。</p>
         <ul>
-          <li>調査期間: [具体的な期間を記入]</li>
-          <li>調査方法: 電話によるアンケート</li>
+          <li>調査対象: TC, PC</li>
+          <li>対象営業所:目黒・神奈川・葛飾・千葉・大和・城東</li>
+          <li>対象調査年月:2024年6月</li>
+          <li>調査方法: 対面によるアンケート</li>
           <li>回答者数: 22名（有効回答数: 15名）</li>
+          <li>アンケート項目</li>
+          <li>
+            <ul>
+              <li>Q1:ご利用のきっかけ</li>
+              <li>Q2:契約前の説明や提案</li>
+              <li>Q3:作業後の状況説明</li>
+              <li>Q4:社員の服装や態度</li>
+              <li>Q5:施行後の効果や後片付け</li>
+              <li>Q6:今回の契約の総合評価</li>
+              <li>コメント</li>
+            </ul>
+          </li>
         </ul>
 
         <div style={{ marginBottom: '80px' }}></div>
